@@ -1,0 +1,79 @@
+model_type:
+  desc: The backbone network of meta model, it can be ConvNet4, ConvNet6, ResNet12, ResNet18, ResNet34, WRN28
+  value: "ConvNet4"
+dataset:
+  desc: The dataset can be CUB, MiniImageNet, TieredImageNet, CIFAR100
+  value: "CUB"
+
+num_epochs:
+  desc: Number of epochs to train over
+  value: 2000
+save_best:
+  desc: Save the best model
+  value: True
+if_augmentation:
+  desc: Use augmentation methods
+  value: True
+batch_size:
+  desc: Batch size
+  value: 1
+sgd_lr:
+  desc: Learning rate of SGD
+  value: 0.1
+patience:
+  desc: patience of optimizer scheduler
+  value: 50
+reduce_factor:
+  desc: reduce rate of optimizer sechduler
+  value: 0.5
+
+num_way:
+  desc: number of way
+  value: 5
+num_shot:
+  desc: number of shot
+  value: 1
+num_query:
+  desc: The number of query samples in a task
+  value: 15
+num_train:
+  desc: The number of train tasks in an epoch
+  value: 100
+num_val:
+  desc: The number of validation tasks
+  value: 600
+num_test:
+   desc: The number of test tasks
+   value: 600
+
+proxy_type:
+   desc: Proxy type can be Proxy, Mean, Sum
+   value: "Mean"
+classifier:
+   desc: Classifier can be 3DConv, Euclidean, FC
+   value: "Euclidean"
+gpu_id:
+   desc: gpu id
+   value: "0"
+
+teacher_model:
+   desc: teacher model, Glove or FastText or Bert
+   value: "Bert"
+random_embedding:
+   desc: embed the labels randomly
+   value: False
+temperature:
+   desc: temperature used in attentnion transfer
+   value: 10
+lam:
+   desc: lamda of text modality loss
+   value: 0.3
+optimizer:
+   desc: SGD or Adam or AdamW
+   value: "Adam"
+aux_loss:
+   desc: MSE or KL
+   value: "KL"
+scale:
+   desc: Scale value in cross attention
+   value: 0.4
